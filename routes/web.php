@@ -23,6 +23,10 @@ Route::get('/faq','MainController@faq');
 Route::get('/contact','MainController@contact');
 Route::post('/feedback','MainController@sendfeedback');
 Route::get('/feedback','MainController@feedback');
+Route::get('/verify','MainController@verify');
+Route::post('/checkverify','MainController@checkverify');
+Route::get('/checkverify','MainController@checknotverify');
+
 
 
 Route::get('/score','ScoreController@score');
