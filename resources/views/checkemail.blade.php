@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="bradcam_text text-center">
-                    <h3>Login First</h3>
+                    <h3>Verify Email</h3>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
 <!-- /bradcam_area  -->
   <br />
   <div class="container box">
-   <h3 align="center">Login</h3>
+   <h3 align="center">Email</h3>
 <hr color="red" width="1100px">
    @if(isset(Auth::user()->email))
     <script>window.location="/main/successlogin";</script>
@@ -39,20 +39,14 @@
     </div>
    @endif
 
-   <form method="post" action="{{ url('/main/checklogin') }}">
+   <form method="post" action="{{ url('/checkmail') }}">
     {{ csrf_field() }}
     <div class="form-group">
      <label>Enter Email</label>
      <input type="email" name="email" class="form-control" />
     </div>
-    <div class="form-group">
-     <label>Enter Password</label>
-     <input type="password" name="password" class="form-control" />
-    </div>
-    <div class="form-group">
-     <input type="submit" name="login" class="btn btn-primary" value="Login" /><br><br>
-     not registered? <a href="/register">Create an account</a><br>
-     <a href="/checkemail">forgotten password</a>
+     <input type="submit" name="login" class="btn btn-primary" value="Verify" /><br><br>
+     not registered? <a href="/register">Create an account</a>
     </div>
   </form><br><br>
   </div>

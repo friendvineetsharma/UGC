@@ -30,6 +30,20 @@
 html {
   scroll-behavior: smooth;
 }
+#id2{
+  margin-left: 150px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+#navigation{
+  width: 800px;
+}
+.Appointment{
+  margin-left: 180px;
+}
 </style>
 <body>
     <header>
@@ -54,20 +68,31 @@ html {
                                         <li><a href="/feedback">Feedback</a></li>
                                         <li><a href="/faq">F.A.Q</a></li>
                                         <li><a href="/contact">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                                        <li>
+
+                                                @if(isset(Auth::user()->email))
+                                                  <a href=""><div id="id2">{{ Auth::user()->name }}<i class="ti-angle-down"></i></div>
+                                                  </a>
+                                                  <ul class="submenu">
+                                                     <li><a href="{{ url('/profile') }}">Your Profile</a></li>
+                                                     <li><a href="{{ url('edit') }}">Edit Profile</a></li>
+                                                     <li><a href="{{ url('/changepassword') }}">Change Password</a></li>
+                                                     <li><a href="{{ url('/main/logout') }}">Sign Out</a></li>
+                                                  </ul>
+                                                @else
+                                                <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                  @if(isset(Auth::user()->email))
-                                    <a href="{{ url('/main/logout') }}"><strong>Logout {{ Auth::user()->name }}</strong>
-                                    </a>
-                                  @else
-                                   <a href="{{ url('/main') }}">Login</a>
-                                  @endif
+                                    <a  href="{{ url('/main') }}">login</a>
                                 </div>
+                            </div>
+                        </div>
+
+                                                @endif
+
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                         <div class="col-12">

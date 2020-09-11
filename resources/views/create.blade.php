@@ -32,17 +32,19 @@
     </div>
    @endif
 
+   @if ($message = Session::get('error'))
+   <div class="alert alert-danger alert-block">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong>{{ $message }}</strong>
+   </div>
+   @endif
+
 
    <form method="POST" action="/register">
     {{ csrf_field() }}
     <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" name="name">
-    </div>
-
-    <div class="form-group">
-        <label for="dob">D.O.B:</label>
-        <input type="date" class="form-control" id="dob" name="dob">
+        <label for="name">Username:</label>
+        <input type="text" class="form-control" id="username" name="username">
     </div>
 
     <div class="form-group">

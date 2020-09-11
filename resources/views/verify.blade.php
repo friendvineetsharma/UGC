@@ -13,14 +13,11 @@
   </style>
  </head>
  <body>
-<br />
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 <div class="container box">
  <h3 align="center">Verify your email address..<br></h3>
  <h5>An otp has been sent to your email address {{$user['email']}}<br></h5>
 <hr color="red" width="1100px">
- @if(isset(Auth::user()->email))
-  <script>window.location="/main/successlogin";</script>
- @endif
 
  @if ($message = Session::get('error'))
  <div class="alert alert-danger alert-block">
@@ -39,7 +36,7 @@
   </div>
  @endif
 
- <form method="post" action="{{ url('checkverify') }}">
+ <form name="form1" method="post" action="{{ url('checkverify') }}">
   {{ csrf_field() }}
   <div class="form-group">
    <input type="hidden" name="email" value="{{$user['email']}}" class="form-control" />
@@ -49,10 +46,23 @@
    <input type="otp" name="otp" class="form-control" />
   </div>
   <div class="form-group">
-   <input type="submit" name="login" class="btn btn-primary" value="Login" /><br><br>
-   not get otp? <a href="/checkverify">Try again</a>
+   <input type="submit" name="login" class="btn btn-primary" value="Login" onclick="stringlength(document.form1.otp,6,6)" />
   </div>
 </form><br><br>
 </div>
 </body>
+<script>
+function stringlength(inputtxt, minlength, maxlength)
+{
+var field = inputtxt.value;
+var mnlen = minlength;
+var mxlen = maxlength;
+
+if(field.length<mnlen || field.length> mxlen)
+{
+alert("Please input the OTP of " +mnlen+ " characters");
+return false;
+}
+}
+</script>
 </html>

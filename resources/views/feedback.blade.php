@@ -24,6 +24,15 @@
     <h2 class="contact-title">Get in Touch</h2>
   </div>
   <div class="col-lg-8">
+    @if (count($errors) > 0)
+     <div class="alert alert-danger">
+      <ul>
+      @foreach($errors->all() as $error)
+       <li>{{ $error }}</li>
+      @endforeach
+      </ul>
+     </div>
+    @endif
     <form class="form-contact contact_form" action="/feedback" method="post">
       {{ csrf_field() }}
       <div class="row">
@@ -53,34 +62,5 @@
 </div>
 </section>
 
-<!-- testimonial_area  -->
-<div class="testimonial_area ">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="testmonial_active owl-carousel">
-                  @foreach($data as $i)
-                    <div class="single_carousel">
-                            <div class="single_testmonial text-center">
-                                    <div class="quote">
-                                        <img src="{{ asset('asset/img/testmonial/quote.svg') }}" alt="">
-                                    </div>
-                                    <p>{{$i->message}}<br><br></p>
-                                    <div class="testmonial_author">
-                                        <div class="thumb">
-                                                <img src="{{ asset('asset/img/testmonial/thumb.png') }}" alt="">
-                                        </div>
-                                        <h3>{{$i->name}}</h3>
-                                        <span>{{$i->email}}</span>
-                                    </div>
-                                </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /testimonial_area  -->
 
 @endsection

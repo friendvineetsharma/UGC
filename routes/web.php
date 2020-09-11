@@ -25,9 +25,17 @@ Route::post('/feedback','MainController@sendfeedback');
 Route::get('/feedback','MainController@feedback');
 Route::get('/verify','MainController@verify');
 Route::post('/checkverify','MainController@checkverify');
-Route::get('/checkverify','MainController@checknotverify');
+Route::get('/profile','MainController@profile');
+Route::get('/edit','MainController@editprofile');
+Route::post('/edit','MainController@editstore');
+Route::post('/checkmail','MainController@checkemail');
+Route::get('/checkemail','MainController@verifymail');
+Route::get('/changepassword','MainController@changepassword');
+Route::post('/change','MainController@change');
 
 
 
-Route::get('/score','ScoreController@score');
+
+
+
 Route::post('/list','ScoreController@list');
