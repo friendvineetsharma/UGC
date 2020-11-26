@@ -121,7 +121,7 @@ $email = $request->get('email');
   function welcome()
   {
     $data= feedback::all();
-    return view('welcome',['data'=>$data]);
+    return view('come',['data'=>$data]);
   }
 
   function feedback()

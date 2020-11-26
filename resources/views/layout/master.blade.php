@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -71,7 +71,7 @@ html {
                                         <li>
 
                                                 @if(isset(Auth::user()->email))
-                                                  <a href=""><div id="id2">{{ Auth::user()->name }}<i class="ti-angle-down"></i></div>
+                                                  <a href=""><div id="id2">{{ Auth::user()->username }}<i class="ti-angle-down"></i></div>
                                                   </a>
                                                   <ul class="submenu">
                                                      <li><a href="{{ url('/profile') }}">Your Profile</a></li>
@@ -155,7 +155,7 @@ html {
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="http://127.0.0.1:8000" target="_blank">UGC</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="http://127.0.0.1:8000" target="_blank">UGC</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>

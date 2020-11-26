@@ -40,7 +40,7 @@
       <!-- left column -->
       <div class="col-md-3">
         <div class="text-center">
-          <img id="blah" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar"><br><br>
+          <img id="blah" src="{{asset('asset\img\uploads\\' . Auth::user()->image) }}" class="avatar img-circle img-thumbnail" alt="avatar"><br><br>
           <h6>Upload a different photo...</h6><br>
           <input type="file" class="text-center center-block file-upload" onchange="readURL(this);"name="image" multiple />
         </div>

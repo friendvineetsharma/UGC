@@ -70,7 +70,7 @@ tr:nth-child(even) {
 @endforeach
 </table><br><br><br><br>
 <div class="form-group">
-    <a href="/search"><button style="cursor:pointer" type="submit" class="btn btn-primary">Back</button></a>
+    <a href="/#form"><button style="cursor:pointer" type="submit" class="btn btn-primary">Back</button></a>
 </div>
 @else
  <script>window.location = "/main";</script>

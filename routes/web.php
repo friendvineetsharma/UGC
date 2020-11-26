@@ -11,6 +11,33 @@
 |
 */
 
+Route::get('/pd','detailcontroller@pd');
+Route::get('/edu','detailcontroller@education');
+Route::get('/exp','detailcontroller@experience');
+Route::get('/research','detailcontroller@research');
+
+
+Route::post('/pd','detailcontroller@savepd');
+Route::post('/sd','detailcontroller@savesd');
+Route::post('/ug','detailcontroller@saveug');
+Route::post('/pg','detailcontroller@savepg');
+Route::post('/od','detailcontroller@saveod');
+Route::post('/rpp','detailcontroller@saverpp');
+Route::post('/rpb','detailcontroller@saverpb');
+Route::post('/rpj','detailcontroller@saverpj');
+Route::post('/exp','detailcontroller@saveexp');
+
+
+Route::get('deleteug/{id}','detailcontroller@deleteug');
+Route::get('deletepg/{id}','detailcontroller@deletepg');
+Route::get('deleteod/{id}','detailcontroller@deleteod');
+Route::get('deleterpp/{id}','detailcontroller@deleterpp');
+Route::get('deleterpb/{id}','detailcontroller@deleterpb');
+Route::get('deleterpj/{id}','detailcontroller@deleterpj');
+Route::get('deleteexp/{id}','detailcontroller@deleteexp');
+
+
+
 Route::get('/', 'MainController@welcome');
 Route::get('/register', 'MainController@create');
 Route::post('/register', 'MainController@store');

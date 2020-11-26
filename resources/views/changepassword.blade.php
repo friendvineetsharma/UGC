@@ -19,7 +19,7 @@
 
 <br />
 <div class="container box">
- <h3 align="center">Change Password</h3><br />
+ <h3 align="center">Enter new Password</h3><br />
 
  @if (count($errors) > 0)
   <div class="alert alert-danger">
@@ -57,6 +57,7 @@
   </div>
 
  </form>
+ <br><Br>
 </div>
 
 @else
